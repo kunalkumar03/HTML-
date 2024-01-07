@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book-Store</title>
+    <style>
+        html, body, div, span, applet, object, iframe,
+h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+h1{font-size: 50px;
+    font-weight: 800;
+    background-image: url(https://c4.wallpaperflare.com/wallpaper/297/22/531/lake-blue-moonlight-moon-wallpaper-preview.jpg);
+    background-position: center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+}
+@media(max-width: 9px){
+    .nav-bar{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .nav1{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .icon-about{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0.5em;
+        padding: 1em;
+    }
+    .nav1 a{
+        margin-top: 0.5em;
+        padding: 1em;
+        border-bottom: 1px solid #adb5bd;
+        color: #adb5bd;
+        font-size: 1em;
+        text-decoration: none;
+        transform: translateY(103px);
+    }
+    .nav1 input{
+        margin-top: 0.5em;
+        border: none;
+        border-bottom: 1px solid #adb5bd;
+        padding: 0.8em 1em;
+        font-size: 1em;
+    }
+    .nav1 input::placeholder{
+        font-family: 'Roboto', sans-serif;
+        color: #adb5bd;
+        font-size: 1em;
+    }
+    input:focus, textarea:focus, select:focus{
+        outline: none;
+    }
+    .nav-bar h3{
+        margin-top: 0.5em;
+        padding: 0.8em 1em;
+        font-size: 1em;
+        font-weight: bold;
+        transform: translateY(-103px);
+    }
+    .material-icons-outlined{
+        color: #adb5bd;
+        size: 2px;
+        margin-right: 1em;
+    
+    }
+    .icon-about a{
+        text-decoration: none;
+        color: #adb5bd;
+        font-size: 1em;
+        padding-left: 1em;
+    }
+    main{
+        margin-top: 1em;
+        font-family: 'Noto Sans JP', sans-serif;
+    }
+    .books{
+        display: flex;
+        flex-direction: row;
+        background-color: #cbb5e2;
+        border-radius: 10px;
+        margin-bottom: 3em;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    }
+    .books:nth-of-type(2){
+        background-color: #fbadaf;
+    }
+    .books:nth-of-type(3){
+        background-color: #a4e0eb;
+    }
+    .books:nth-of-type(4){
+        background-color: #fdca95;
+    }
+    .book-img{
+        width: 100%;
+        max-width: 1000px;
+        margin: 1.5em;
+        border-radius: 3px;
+        transition: transform 1s;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    }
+    .book-img:hover{
+        transform: scale(1.05);
+    }
+    .descp{
+        margin: 1.5em;
+        padding: 1em;
+        
+    }
+    .book-name{
+        font-weight: bold;
+        padding-bottom: 0.5em;
+        font-size: 1.1em;
+        letter-spacing: 1px;
+        color: white;
+    }
+    .author{
+        padding-bottom: 0.5em;
+        font-size: 1.1em;
+        letter-spacing: 1px;
+        color: white;
+    }
+    .rating{
+        padding-bottom: 1.2em;
+        font-size: 1em;
+        letter-spacing: 1px;
+        color: white;
+    }
+    .info{
+        font-size: 1em;
+        letter-spacing: 1px;
+        color: white;
+    }
+    .descp button{
+        margin-top: 1em;
+        background: none;
+        border: none;
+        color: #cbb5e2;
+        background-color: white;
+        padding: 0.6em 1.5em;
+        font-size: 1em;
+        border-radius: 20px;
+        font-weight: bolder;
+    }
+    .descp button:hover{
+        color: #3a00f8;
+    }
+    #b1{
+        color: #f0080f;
+    }
+    #b1:hover{
+        color: #0dea48;
+    }
+    #b2{
+        color: #e9f41e;
+    }
+    #b2:hover{
+        color: #e02cf0;
+    }
+    #b3{
+        color: #39c36ee5;
+    }
+    #b3:hover{
+        color: #de7308;
+    }
+
+}
+@media(min-width: 900px){
+    .nav-bar{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .nav1{
+        display: flex;
+        flex-direction: row;
+        margin-left: 1em;
+        margin-bottom: 1em;
+        margin-top: 1em;
+    }
+    .nav1 a{
+        padding: 1em;
+        border: none;
+        border-right: 1px solid #adb5bd;
+        color: #adb5bd;
+        font-size: 1em;
+        text-decoration: none;
+    }
+    .nav1 input{
+        border: none;
+        margin-left: 0.5em;
+        padding: 0.8em 1em;
+        font-size: 1em;
+    }
+    .nav1 input::placeholder{
+        font-family: 'Roboto', sans-serif;
+        color: #adb5bd;
+        font-size: 1em;
+    }
+    input:focus, textarea:focus, select:focus{
+        outline: none;
+    }
+    .nav-bar h3{
+        padding: 0.8em 1em;
+        margin-left: 1em;
+        margin-bottom: 1em;
+        margin-top: 1em;
+        font-size: 1em;
+        font-weight: bold;
+    }
+    .icon-about{
+        display: flex;
+        align-items: center;
+    }
+    .material-icons-outlined{
+        color: #adb5bd;
+        size: 2px;
+        margin-right: 1em;
+    
+    }
+    .icon-about a{
+        margin-right: 2em;
+        text-decoration: none;
+        color: #adb5bd;
+        font-size: 1em;
+        border-left: 1px solid #adb5bd;
+        padding-left: 1em;
+    }
+
+    main{
+        margin-top: 1em;
+        font-family: 'Noto Sans JP', sans-serif;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .books{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        max-width: 600px;
+        justify-content: space-evenly;
+        background-color: #cbb5e2;
+        border-radius: 10px;
+        margin-bottom: 3em;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    }
+    .books:nth-of-type(2){
+        background-color: #fbadaf;
+    }
+    .books:nth-of-type(3){
+        background-color: #a4e0eb;
+    }
+    .books:nth-of-type(4){
+        background-color: #fdca95;
+    }
+    .book-img{
+        width: 100%;
+        max-width: 500px;
+        border-radius: 3px;
+        transition: transform 1s;
+        margin: 1.5em;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    }
+    .book-img:hover{
+        transform: scale(1.05);
+    }
+    .descp{
+        margin: 1.5em;
+        padding: 1em;
+        
+    }
+    .book-name{
+        font-weight: bold;
+        padding-bottom: 0.5em;
+        font-size: 1.1em;
+        letter-spacing: 1px;
+        color: white;
+    }
+    .author{
+        padding-bottom: 0.5em;
+        font-size: 1.1em;
+        letter-spacing: 1px;
+        color: white;
+    }
+    .rating{
+        padding-bottom: 1.2em;
+        font-size: 1em;
+        letter-spacing: 1px;
+        color: white;
+    }
+    .info{
+        font-size: 1em;
+        letter-spacing: 1px;
+        color: white;
+    }
+    .descp button{
+        margin-top: 1em;
+        background: none;
+        border: none;
+        color: #cbb5e2;
+        background-color: white;
+        padding: 0.6em 1.5em;
+        font-size: 1em;
+        border-radius: 20px;
+        font-weight: bolder;
+    }
+    .descp button:hover{
+        color: #a790f2;
+    }
+    #b1{
+        color: #fbadaf;
+    }
+    #b1:hover{
+        color: #ff6e9f;
+    }
+    #b2{
+        color: #a4e0eb;
+    }
+    #b2:hover{
+        color: #62cdec;
+    }
+    #b3{
+        color: #fdca95;
+    }
+    #b3:hover{
+        color: #fb9124;
+    }
+
+
+    
+
+}
+
+    </style>
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <div class="nav1">
+            <a href="">Book Categories</a>
+            <input type="text" id="search_book" placeholder="Search Book">
+        </div>
+        <h1>Engineering Book-Store</h1>
+        <div class="icon-about">
+            <a href=""><i class="material-icons"><span class="material-icons-outlined">My profile</span></i></a>
+            <a href="">About Us</a>
+        </div>
+
+    </nav>
+
+    <main>
+        <div class="books">
+            <div>
+                <img src="https://m.media-amazon.com/images/I/61-Y9AVcLDL._SL1181_.jpg" alt="" class="book-img">
+            </div>
+            <div class="descp">
+                <h2 class="book-name">Pro HTML5 with Visual Studio 2015</h2>
+                <h3 class="author">by Mark Collins</h3>
+                <h3 class="rating">4.2 rating</h3>
+                <p class="info">
+                    Pro HTML5 with Visual Studio 2015 is written to help ASP.NET developers make the leap to the inevitable and exciting world of HTML5. 
+                    With this book, youll quickly master the new HTML elements, the improved CSS features, and advanced content including audio, video, 
+                    canvas, SVG, and drag and drop capabilities. You will also learn how your enterprise applications can benefit from some brand-new 
+                    technology such as web workers and web sockets. Using practical hands-on demonstrations you will learn all of the really cool 
+                    features that you can start using now, within your existing ASP.NET applications.
+                    HTML5 promises to revolutionize the way web sites are developed with an impressive set of built-in client-side features. 
+                    The use of HTML5 as a preferred development language in Windows 10, along with growing support from the major browser vendors, 
+                    is likely to make HTML5 the de-facto standard for all future web development. The number of HTML5-capable phones alone is estimated to 
+                    top 2 billion by 2016. Many professional web developers who are firmly rooted in the Microsoft toolset such as Visual Studio, 
+                    Active Server Pages, and .NET are trying to understand how HTML5 fits into their world.
+                    Written with the Visual Studio 2015 developer in mind, this book:
+                    Illustrates how to integrate the new HTML5 features in an ASP .NET MVC6 application
+                    Explains how to add active content including video and graphics
+                    Demonstrates the new scripting features of HTML5 such as application cache and local storage</p>
+                <a href="https://www.amazon.in/Pro-HTML5-Visual-Studio-2015/dp/1484211480/ref=sr_1_2_sspa?keywords=html+coding+book&qid=1698685524&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1">
+                <button type="submit">buy books</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="books">
+            <div>
+                <img src="https://m.media-amazon.com/images/I/91-l2iv-4hL._SL1500_.jpg" alt="" class="book-img">
+            </div>
+            <div class="descp">
+                <h2 class="book-name">C Programming: Language</h2>
+                <h3 class="author">by Darrel L. Graham</h3>
+                <h3 class="rating">4.0 rating</h3>
+                <p class="info">
+                    Programming Language introduces you to the most commonly used programming 
+                    language, one that has been the basis for many other versions over the years. 
+                    It is a great book, not just for beginning programmers, but also for computer 
+                    users who would want to have an idea what is happening behind the scenes as they
+                    work with various computer programs.
+                    In this book, you are going to learn what the C programming language entails,
+                    how to write conditions, expressions, statements and even commands,
+                    for the language to perform its functions efficiently. You will learn
+                    too how to organize relevant expressions so that after compilation and 
+                    execution, the computer returns useful results and not error messages.
+                    Additionally, this book details the data types that you need for the C language and how to present it as well.
+                    Simply put, this is a book for programmers, learners taking other computer courses,
+                    and other computer users who would like to be versed with the workings of the most popular computer language, C.
+                </p>
+                <a href="https://www.amazon.in/Programming-Language-Beginners-Guide-Learn-ebook/dp/B01H0LBF9Q/ref=pd_rhf_d_dp_s_p13n_da_mdi_dlsrr_sccl_1_4/262-3033374-3277918?pd_rd_w=b8R55&content-id=amzn1.sym.c12f3d68-c7bb-44ca-b53d-8d54051254b6&pf_rd_p=c12f3d68-c7bb-44ca-b53d-8d54051254b6&pf_rd_r=X77HY8JRSPBP0ETKZTP2&pd_rd_wg=g4qfM&pd_rd_r=a6ad1183-2086-473a-a909-4da9463cc59e&pd_rd_i=B01H0LBF9Q&psc=1">
+                <button type="submit" id="b1">buy books</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="books">
+            <div>
+                <img src="https://m.media-amazon.com/images/I/7128Ts1XUdL._SL1360_.jpg" alt="" class="book-img">
+            </div>
+            <div class="descp">
+                <h2 class="book-name">Computer Organization and Architecture</h2>
+                <h3 class="author">by William Stallings</h3>
+                <h3 class="rating">4.2 rating</h3>
+                <p class="info">
+                    Computer Organization and Architecture is a comprehensive coverage of the entire field of computer
+                    design updated with the most recent research and innovations in computer structure and function.
+                    With clear, concise, and easy-to-read material, the Tenth Edition is a user-friendly
+                    source for people studying computers. Subjects such as I/O functions and structures, 
+                    RISC, and parallel processors are explored integratively throughout, with real world 
+                    examples enhancing the text for reader interest. With brand new material and strengthened pedagogy, 
+                    this text engages readers in the world of computer organization and architecture.
+                </p>
+                <a href="https://www.amazon.com/Computer-Organization-Architecture-William-Stallings/dp/0134101618">
+                <button type="submit" id="b2">buy books</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="books">
+            <div>
+                <img src="https://m.media-amazon.com/images/I/411OQwuH36L.jpg"
+                    alt="" class="book-img">
+            </div>
+            <div class="descp">
+                <h2 class="book-name">TEXTBOOK OF DIGITAL ELECTRONICS</h2>
+                <h3 class="author">by S. S. Bhatti</h3>
+                <h3 class="rating">4.2 rating</h3>
+                <p class="info">
+                    Digital electronics is an interdisciplinary subject covering electronics, electrical,
+                    information technology, computer science engineering and sciences domain. Digital Electronics provides comprehensive coverage of the fundamental aspects 
+                    of digital electronics. It explores the theoretical and practical aspects of digital circuitry. It includes step-by-step methods to solve digital system problems. 
+                    This book is invaluable for BE, BTech., BSc, MSc (Computer Science/IT), MSc (Physics),
+                    MSc (Electronics), BCA, MCA, PGDCA and PGDIT students.
+                </p>    
+                <a href="https://www.amazon.in/Textbook-Digital-Electronics-S-S-Bhatti/dp/9381141517/ref=sr_1_1?qid=1698683948&refinements=p_27%3ARahul+Malhotra&s=books&sr=1-1">
+                <button type="submit" id="b3">buy books</button>
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+
+</html>

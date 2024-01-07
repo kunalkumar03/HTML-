@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login/Register</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;me
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-form, .register-form {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+button {
+    width: 100%;
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="https://us.123rf.com/450wm/vladwel/vladwel1606/vladwel160600207/58615576-bookstore-vector-symbol-isolated-on-white-background-pile-of-books.jpg?ver=6" alt="Company Logo">
+        </div>
+        <div class="form-container">
+            <div class="login-form">
+                <h2>Login</h2>
+                <form action="book store.html">
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" id="username" required>
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password" required>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+            <div class="register-form">
+                <h2>Register</h2>
+                <form action="#">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" required>
+                    <label for="reg_password">Password:</label>
+                    <input type="password" name="reg_password" id="reg_password" required>
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

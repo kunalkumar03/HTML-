@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form fill</title>
+</head>
+<body text="red">
+<center><h1 style="color:green"> Government Polytechnic Saharsa </h1></center>
+<center><h3> Registration Form </h3></center>
+<form action="kunalkumar.html" method="submit">
+<fieldset>
+<label> * Full Name:- </label><input type="text" name="full name" required> <br><br>
+<label> * Email:- </label><input type="email" name="email" required><br><br>
+<label> * Gender:-
+    <input type="radio" name="gender" value="male" required>Male</label>
+    <label><input type="radio" name="gender" value="female">Female</label> 
+    <label><input type="radio" name="gender" value="other">Other</label><br><br>
+<label> * DOB:- </label> <input type="date" name="DOB" required><br><br>
+<label> * Qualification:- </label><input type="checkbox" name="10th">10th<input type="checkbox" name="12th">12th<input type="checkbox" name="Diploma">Diploma<input type="checkbox" name="Btec">Btech<input type="checkbox" name="Mtech">Mtech<br><br>
+<label> * State/ City:- </label><input type="text" name="state/city" required><br><br>
+<label> * Address:- <br><textarea name="" id="" cols="30" rows="10" required></textarea></label><br><br>
+<label> * Phone Number:- <input type="number" name="phone" id="phone" placeholder="0123456789" pattern="[0-9]{10}">
+</fieldset>
+<br><br>
+<center>
+    <input type="submit" value="submit"><br><br>
+    <input type="button" value="GoBack" onclick="history.back()">
+</center>  
+</form>
+</body>
+</html>
